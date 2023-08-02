@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Price Conversion</title>
+</head>
+<body>
+  <h1>Price Conversion</h1>
+  <button onclick="convertPrices()">Convert Prices to Rupees</button>
+  <script>
+    const exchangeRate = 80; 
+
+    const items = {
+      item1: 10, 
+      item2: 20,
+      item3: 30
+    };
+
+    function convertPrices() {
+      const convertedPrices = Object.entries(items).map(([item, price]) => {
+        return { [item]: price * exchangeRate };
+      });
+
+      console.log(convertedPrices);
+     
+    }
+  </script>
+</body>
+</html>

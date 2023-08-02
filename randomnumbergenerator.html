@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delayed Random Number Generator</title>
+</head>
+<body>
+  <h1>Delayed Random Number Generator</h1>
+  <button onclick="generateRandomNumber(3)">Generate Random Number in 3 seconds</button>
+  <p id="countdown"></p>
+  <script>
+    function generateRandomNumber(delay) {
+      const countdownElement = document.getElementById("countdown");
+      countdownElement.innerHTML = `Generating random number in ${delay} seconds...`;
+
+      setTimeout(() => {
+        let remainingTime = delay;
+        const countdownInterval = setInterval(() => {
+          remainingTime--;
+          countdownElement.innerHTML = `Generating random number in ${remainingTime} seconds...`;
+
+          if (remainingTime === 0) {
+            clearInterval(countdownInterval);
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            countdownElement.innerHTML = `Random number generated: ${randomNumber}`;
+          }
+        }, 1000);
+      }, delay * 1000);
+    }
+  </script>
+</body>
+</html>

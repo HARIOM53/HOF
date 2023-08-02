@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse string</title>
+</head>
+<body>
+    <h2>Reverse String</h2>
+    <label for="inputstring">Enter a string</label>
+    <input type="text" id="inputstring">
+    <button onclick="reverseString()">Reverse</button>
+
+    <div id="output"></div>
+    
+    <script>
+        const reverseString = () => {
+            const input = document.getElementById("inputstring").value;
+        
+            const string = (input) => {
+                return input.split('').reverse().join('');
+            };
+            
+            setTimeout(() => {
+                document.getElementById("output").textContent = "Reversed String after 2 seconds: " + string(input);
+            }, 2000);
+        };
+    </script>
+</body>
+</html>
